@@ -1,12 +1,11 @@
 import React, {useState, useEffect}  from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 300,
+    maxWidth: '100%',
     maxHeight: 500,
     backgroundColor: '#222222',
     color: '#fff',

@@ -2,7 +2,6 @@ import React, {useState, useEffect}  from 'react';
 import './TotalData.css';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
@@ -33,10 +32,10 @@ export default function TotalData() {
   return (
     <div className="totalData">      
         <Grid container align="center" spacing={1}>
-            <Grid item xs={6} lg={3} md={3}>
+            <Grid item xs={12} sm={6} lg={3} md={3}>
                 <Card style={{backgroundColor: "#e6e600"}} className={classes.root} variant="outlined">
                 <CardContent>
-                    <Typography variant="h3" component="h2">
+                    <Typography variant="h3">
                     Total
                     </Typography>
                     <Typography variant="h4">
@@ -46,10 +45,10 @@ export default function TotalData() {
                 </Card>
             </Grid>
             
-            <Grid item xs={6} lg={3} md={3}>
+            <Grid item xs={12} sm={6} lg={3} md={3}>
                 <Card style={{backgroundColor: "#ffa500"}} className={classes.root} variant="outlined">
                 <CardContent>
-                    <Typography variant="h3" component="h2">
+                    <Typography variant="h3">
                     Active
                     </Typography>
                     <Typography variant="h4">
@@ -59,10 +58,10 @@ export default function TotalData() {
                 </Card>
             </Grid>
 
-            <Grid item xs={6} lg={3} md={3}>
+            <Grid item xs={12} sm={6} lg={3} md={3}>
                 <Card style={{backgroundColor: "#00e600"}} className={classes.root} variant="outlined">
                 <CardContent>
-                    <Typography variant="h3" component="h2">
+                    <Typography variant="h3">
                     Recovered
                     </Typography>
                     <Typography variant="h4">
@@ -72,10 +71,10 @@ export default function TotalData() {
                 </Card>
             </Grid>
 
-            <Grid item xs={6} lg={3} md={3}>
+            <Grid item xs={12} sm={6} lg={3} md={3}>
                 <Card style={{backgroundColor: "#e60000"}} className={classes.root} variant="outlined">
                 <CardContent>
-                    <Typography variant="h3" component="h2">
+                    <Typography variant="h3">
                     Deaths
                     </Typography>
                     <Typography variant="h4">

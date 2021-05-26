@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
-import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 
 const columns = [
@@ -38,6 +37,9 @@ const useStyles = makeStyles({
   table: {
       maxWidth: 1000,
   },
+  container: {
+    maxHeight: '100%',
+  },
   root: {
     width: '100%',
   },
@@ -47,7 +49,8 @@ const useStyles = makeStyles({
      fontSize: 20,
   },
   body: {
-      fontSize: 5,
+      backgroundColor: "#333333",
+      fontSize: 18,
       color: '#fff',
   },
 });
@@ -73,7 +76,7 @@ function StateWise() {
     return (
         <div className="schedules" align="center">
             <div className={classes.root}>
-            <TableContainer>
+            <TableContainer className={classes.container}>
                 <Table stickyHeader className={classes.table} aria-label="sticky table">
                 <TableHead>
                     <TableRow>
@@ -93,11 +96,11 @@ function StateWise() {
                 <TableBody>
                     {data.map((curElem, index) => (
                         <TableRow hover role="checkbox" tabIndex={-1} key={index}>
-                            <TableCell className={classes.head} align="left">{curElem.state}</TableCell>
-                            <TableCell className={classes.head} align="right">{curElem.confirmed}(<span style={{color: "#e6e600"}}>{"+"}{curElem.deltaconfirmed}</span>)</TableCell>
-                            <TableCell className={classes.head} align="right">{curElem.active}</TableCell>
-                            <TableCell className={classes.head} align="right">{curElem.recovered}(<span style={{color: "#00e600"}}>{"+"}{curElem.deltarecovered}</span>)</TableCell>
-                            <TableCell className={classes.head} align="right">{curElem.deaths}(<span style={{color: "#e60000"}}>{"+"}{curElem.deltadeaths}</span>)</TableCell>
+                            <TableCell className={classes.body} align="left">{curElem.state}</TableCell>
+                            <TableCell className={classes.body} align="right">{curElem.confirmed}(<span style={{color: "#e6e600"}}>{"+"}{curElem.deltaconfirmed}</span>)</TableCell>
+                            <TableCell className={classes.body} align="right">{curElem.active}</TableCell>
+                            <TableCell className={classes.body} align="right">{curElem.recovered}(<span style={{color: "#00e600"}}>{"+"}{curElem.deltarecovered}</span>)</TableCell>
+                            <TableCell className={classes.body} align="right">{curElem.deaths}(<span style={{color: "#e60000"}}>{"+"}{curElem.deltadeaths}</span>)</TableCell>
                             {/* <TableCell className={classes.head} align="center">{curElem.lastupdatedtime}</TableCell> */}
                         </TableRow>
                     ))}
